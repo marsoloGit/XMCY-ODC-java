@@ -6,6 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
+
 name: Java CI with Maven
 
 on:
@@ -31,21 +32,21 @@ jobs:
       with:
         java-version: ${{ matrix.java-version }}
         cache: maven
-#    - name: Build with Maven
-#
-#      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=junit/test-results-selenium-${{ matrix.java-version }}
-#
-#    - name: Test Results Selenium
-#      uses: dorny/test-reporter@v1
-#      if: success() || failure()    # run this step even if previous step failed
-#      with:
-#        name: UI tests selenium            # Name of the check run which will be created
-#        path: junit/test-results-selenium-${{ matrix.java-version }}.xml    # Path to test results
-#
-#        reporter: java-junit        # Format of test results
+    - name: Build with Maven
 
-    - name: Test
-      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=junit/test-results-selenium-${{ matrix.java-version }}
+
+    - name: Test Results Selenium
+      uses: dorny/test-reporter@v1
+      if: success() || failure()    # run this step even if previous step failed
+      with:
+        name: UI tests selenium            # Name of the check run which will be created
+        path: junit/test-results-selenium-${{ matrix.java-version }}.xml    # Path to test results
+
+        reporter: java-junit        # Format of test results
+
+#    - name: Test
+#      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 ]
 #    - name: Report
 #      uses: dorny/test-reporter@v1
