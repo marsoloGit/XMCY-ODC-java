@@ -27,7 +27,8 @@ jobs:
         cache: maven
     - name: Build with Maven
 
-      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=result
+#      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=result
+      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit
 
 #    - name: Test Results Selenium
 #      uses: dorny/test-reporter@v1
