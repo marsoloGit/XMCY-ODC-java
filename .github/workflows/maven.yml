@@ -27,7 +27,7 @@ jobs:
         cache: maven
     - name: Build with Maven
 
-      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=junit/test-results-selenium-${{ matrix.java-version }}
+      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=result
 
 #    - name: Test Results Selenium
 #      uses: dorny/test-reporter@v1
@@ -38,8 +38,8 @@ jobs:
 #
 #        reporter: java-junit        # Format of test results
 
-    - name: Test
-      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+#    - name: Test
+#      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
 
     - name: Report
       uses: dorny/test-reporter@v1
