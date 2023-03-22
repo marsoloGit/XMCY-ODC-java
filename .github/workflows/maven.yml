@@ -32,9 +32,12 @@ jobs:
 #      run: mvn test --file pom.xml
 #      run: mvn -Dtest=DemoTest test
       run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=test-results-selenium-${{ matrix.python-version }}
-
 #      run: pytest tests/functional_tests/demo_test.py --doctest-modules --junitxml=junit/test-results-selenium-${{ matrix.python-version }}.xml
 
-    # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-#    - name: Update dependency graph
-#      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+    - name: Test Results Selenium
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: UI tests selenium            # Name of the check run which will be created
+          path: junit/test-results-selenium-test-results-selenium-${{ matrix.python-version }}.xml    # Path to test results
+          reporter: java-junit        # Format of test results
