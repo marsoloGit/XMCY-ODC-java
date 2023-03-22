@@ -35,7 +35,7 @@ jobs:
     - name: Build with Maven
 #      run: mvn test --file pom.xml
 #      run: mvn -Dtest=DemoTest test
-      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=test-results-selenium-${{ matrix.java-version }}
+      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=junit/test-results-selenium-${{ matrix.java-version }}
 #      run: pytest tests/functional_tests/demo_test.py --doctest-modules --junitxml=junit/test-results-selenium-${{ matrix.python-version }}.xml
 
     - name: Test Results Selenium
@@ -43,6 +43,8 @@ jobs:
       if: success() || failure()    # run this step even if previous step failed
       with:
         name: UI tests selenium            # Name of the check run which will be created
-        path: target/surefire-reports/junit/test-results-selenium-${{ matrix.java-version }}.xml    # Path to test results
+#        path: target/surefire-reports/junit/test-results-selenium-${{ matrix.java-version }}.xml    # Path to test results
+        path: junit/test-results-selenium-${{ matrix.java-version }}.xml    # Path to test results
+
         reporter: java-junit        # Format of test results
 
