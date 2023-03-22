@@ -1,25 +1,25 @@
-//import com.epam.jdi.light.driver.get.DriverUtils;
-import com.epam.jdi.light.elements.complex.WebList;
-import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
-import com.epam.jdi.light.elements.pageobjects.annotations.Url;
-import com.epam.jdi.light.elements.pageobjects.annotations.*;
-import com.epam.jdi.light.elements.pageobjects.*;
-import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
-import com.epam.jdi.light.settings.WebSettings;
-import org.openqa.selenium.*;
-import org.testng.annotations.*;
+////import com.epam.jdi.light.driver.get.DriverUtils;
+//import com.epam.jdi.light.elements.complex.WebList;
+//import com.epam.jdi.light.elements.composite.WebPage;
+//import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
+//import com.epam.jdi.light.elements.pageobjects.annotations.Url;
+//import com.epam.jdi.light.elements.pageobjects.annotations.*;
+//import com.epam.jdi.light.elements.pageobjects.*;
+//import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
+//import com.epam.jdi.light.settings.WebSettings;
+//import org.openqa.selenium.*;
+//import org.testng.annotations.*;
 
-import java.awt.*;
+//import java.awt.*;
 
-@JSite("https://www.xm.com")
-public class DomoJDITest {
-
-    @Url("/economic-calendar")
-    public static class EconomicCalendarPage extends WebPage {
-        @UI("q")
-        public static TextField searchField;
-    }
+//@JSite("https://www.xm.com")
+//public class DomoJDITest {
+//
+//    @Url("/economic-calendar")
+//    public static class EconomicCalendarPage extends WebPage {
+//        @UI("q")
+//        public static TextField searchField;
+//    }
 
 //    @Url("/economic-calendar")
 //    public static EconomicCalendarPage economicCalendarPage;
@@ -42,5 +42,5 @@ public class DomoJDITest {
 //    public void tearDown() {
 //        DriverUtils.closeDriver(); // Close the web driver
 //    }
-}
+//}
 
