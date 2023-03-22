@@ -13,7 +13,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java-version: ["1.8"]
+        java-version: ["11"]
+        distribution: 'adopt'
 
     steps:
     - uses: actions/checkout@v3
@@ -22,7 +23,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
 #        java-version: ${{ matrix.java-version }}
-        java-version: 1.8
+        java-version: '11'
         cache: maven
     - name: Build with Maven
 
