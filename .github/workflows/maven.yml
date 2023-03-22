@@ -18,20 +18,24 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version: ["1.8"]
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up JDK 1.8
+    - name: Set up JDK ${{ matrix.java-version }}
 
       uses: actions/setup-java@v3
       with:
-        java-version: '11'
-        distribution: 'temurin'
+        java-version: ${{ matrix.java-version }}
+#        distribution: 'temurin'
         cache: maven
     - name: Build with Maven
 #      run: mvn test --file pom.xml
 #      run: mvn -Dtest=DemoTest test
-      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=test-results-selenium-${{ matrix.python-version }}
+      run: mvn -Dtest=DemoTest test surefire-report:report -Dsurefire.report.format=junit -Dsurefire.report.name=test-results-selenium-${{ matrix.java-version }}.xml
 #      run: pytest tests/functional_tests/demo_test.py --doctest-modules --junitxml=junit/test-results-selenium-${{ matrix.python-version }}.xml
 
     - name: Test Results Selenium
@@ -39,5 +43,5 @@ jobs:
       if: success() || failure()    # run this step even if previous step failed
       with:
         name: UI tests selenium            # Name of the check run which will be created
-        path: junit/test-results-selenium-test-results-selenium-${{ matrix.python-version }}.xml    # Path to test results
+        path: junit/test-results-selenium-test-results-selenium-${{ matrix.java-version }}.xml    # Path to test results
         reporter: java-junit        # Format of test results
