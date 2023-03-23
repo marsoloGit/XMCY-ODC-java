@@ -41,7 +41,8 @@ jobs:
 
 #    - name: Test
 #      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-    - name: echo "$(<target/surefire-reports/testng-results.xml )"
+    - name: report content
+      run: echo "$(<target/surefire-reports/testng-results.xml )"
 
     - name: Report
       uses: dorny/test-reporter@v1
