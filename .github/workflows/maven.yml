@@ -41,10 +41,11 @@ jobs:
 
 #    - name: Test
 #      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+    - name: echo "$(<target/surefire-reports/testng-results.xml )"
 
     - name: Report
       uses: dorny/test-reporter@v1
-      if: always()
+      if: success() || failure()    # run this step even if previous step failed
       with:
         name: Maven Tests
         path: target/surefire-reports/*.xml
