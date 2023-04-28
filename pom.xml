@@ -27,31 +27,9 @@
     </build>
 
 
-
     <dependencies>
-    <!--<dependency>-->
-    <!--<groupId>javax.json</groupId>-->
-    <!--<artifactId>javax.json-api</artifactId>-->
-    <!--<version>1.0</version>-->
-    <!--</dependency>-->
-    <!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api &ndash;&gt;-->
-    <!--<dependency>-->
-    <!--<groupId>javax.ws.rs</groupId>-->
-    <!--<artifactId>javax.ws.rs-api</artifactId>-->
-    <!--<version>2.0.1</version>-->
-    <!--</dependency>-->
-    <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 &ndash;&gt;-->
-    <!--<dependency>-->
-    <!--<groupId>org.apache.commons</groupId>-->
-    <!--<artifactId>commons-lang3</artifactId>-->
-    <!--<version>3.0</version>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-    <!--<groupId>org.glassfish.jersey.core</groupId>-->
-    <!--<artifactId>jersey-client</artifactId>-->
-    <!--<version>2.17</version>-->
-    <!--</dependency>-->
-    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -83,13 +61,38 @@
             <version>5.3.2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.epam.jdi/jdi-light -->
+        <!--<dependency>-->
+            <!--<groupId>com.epam.jdi</groupId>-->
+            <!--<artifactId>jdi-light</artifactId>-->
+            <!--<version>1.4.10</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.epam.jdi/jdi-light-bootstrap &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.epam.jdi</groupId>-->
+            <!--<artifactId>jdi-light-bootstrap</artifactId>-->
+            <!--<version>1.4.10</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/com.epam.jdi/jdi-web-testng &ndash;&gt;-->
+
+
         <dependency>
             <groupId>com.epam.jdi</groupId>
-            <artifactId>jdi-light</artifactId>
+            <artifactId>jdi-web-testng</artifactId>
+            <version>2.0.27</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-material-ui</artifactId>
             <version>1.4.10</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.32.0</version>
+        </dependency>
 
     </dependencies>
-    
+
 </project>

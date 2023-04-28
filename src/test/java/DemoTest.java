@@ -14,6 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class DemoTest extends BasicTest {
 
+
+
 	@Test
 	public void checkFlowToCalendar() throws CannotResolveClassException {
 		ResearchEducationPage researchAndEducation_page = new HomePage(getDriver()).navigateToResearchAndEducation();
@@ -40,7 +42,6 @@ public class DemoTest extends BasicTest {
 		getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 //		List<String> actualDatesRange = calendarPage.datePicker.getSelectedRange();
 ////		List<String> expectedDatesRange = Const.CalendarRanges.getRange()
-		assert 1==1;
 
 	}
 
